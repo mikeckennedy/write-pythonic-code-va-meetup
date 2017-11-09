@@ -11,7 +11,7 @@ measurements = [
     Measurement(str(uuid.uuid4()), 2, 2, 60),
     Measurement(str(uuid.uuid4()), 2, 3, 73),
     Measurement(str(uuid.uuid4()), 3, 1, 40),
-    Measurement(str(uuid.uuid4()), 3, 2, 90),
+    Measurement(str(uuid.uuid4()), 3, 2, 91),
     Measurement(str(uuid.uuid4()), 3, 3, 90)
 ]
 
@@ -69,3 +69,8 @@ print(high_measurements2)
 print(high_measurements3)
 print(high_m_by_id)
 print(high_values_distinct)
+
+high_val = max((m.value for m in measurements))
+print(f"Highest value is {high_val}!")
+measurements.sort(key=lambda m: -m.value)
+print(measurements)

@@ -11,6 +11,8 @@ def find_numbers(nums: List[int], test) -> List[int]:
     return other_numbers
 
 # Sort data
+def get_key(n):
+    return -abs(n)
 
 # def is_even(n):
 #     return n % 2 == 0
@@ -22,5 +24,6 @@ print(find_numbers(data, lambda n: n % 6 == 0))
 
 result = find_numbers(data, lambda n: n % 6 == 0)
 
+data.sort(key=get_key)
 data.sort(key=lambda n: -abs(n))
 print(data)
