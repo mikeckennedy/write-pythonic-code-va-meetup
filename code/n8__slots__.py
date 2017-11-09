@@ -23,6 +23,12 @@ class MutableThing:
         self.dxxxxxxx = d
 
 
+m1 = MutableThing(1,2,3,4)
+m2 = MutableThing(2,5,3,4)
+print((m1.__dict__))
+print((m2.__dict__))
+
+
 class ImmutableThing:
     __slots__ = ['a', 'b', 'c', 'd']
 
@@ -33,6 +39,9 @@ class ImmutableThing:
         self.d = d
 
 
+i = ImmutableThing(1,2,3,4)
+# print(i.__dict__)
+
 print("Uncomment just 1 of these 4 loops below")
 print("after the program pauses on input, check the process memory")
 
@@ -42,9 +51,9 @@ data = []
 t0 = datetime.datetime.now()
 
 # Loop 1: Tuples
-print("tuple")
-for n in range(count):
-    data.append((1 + n, 2 + n, 3 + n, 4 + n))
+# print("tuple")
+# for n in range(count):
+#     data.append((1 + n, 2 + n, 3 + n, 4 + n))
 
 # # Loop 2: Named tuple
 # print("named tuple")
@@ -57,9 +66,9 @@ for n in range(count):
 #     data.append(MutableThing(1 + n, 2 + n, 3 + n, 4 + n))
 #
 # Loop 4: Slot based immutable class
-# print("slot based class")
-# for n in range(count):
-#   data.append(ImmutableThing(1 + n, 2 + n, 3 + n, 4 + n))
+print("slot based class")
+for n in range(count):
+  data.append(ImmutableThing(1 + n, 2 + n, 3 + n, 4 + n))
 
 t1 = datetime.datetime.now()
 
